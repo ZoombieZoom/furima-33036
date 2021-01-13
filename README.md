@@ -1,24 +1,59 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| email | string | null: false |
+| password | string | null: false |
+| name | string | null: false |
+| birthday | string | null: false |
+| kanji_first_name | string | null: false |
+| kanji_last_name | string | null: false |
+| kana_first_name | string | null: false |
+| kana_last_name | string | null: false |
 
-Things you may want to cover:
 
-* Ruby version
+## items table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| name | string |  null: false | 
+| image | text | |
+| category | string | null: false |
+| state | string | null: false |
+| delivery_fee | string | null false |
+| area | string | null: false |
+| days | string | null: false |
+| price | string | null: false |
 
-* System dependencies
+## likes table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| user |  references | foreign_key: true |
+| item | references | foreign_key: true |
 
-* Configuration
+## comments table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| text | text | null: false |
+| user | references | foreign_key: true |
+| item | references | foreign_key: true |
 
-* Database creation
+## shipping_addresses table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| postal_code | string | null: false |
+| prefectures | string | null: false |
+| municipalities | string | null: false |
+| address | string | null: false |
+| building | string | |
+| phone_number | string | null: false |
 
-* Database initialization
+## purchases table
+| Column             | Type                | Options                 |
+|--------------------|---------------------|-------------------------|
+| card_number | string | null: false |
+| expiration_date | string | null: false |
+| security_code | string | null: false |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# URL
+https://gyazo.com/45bbc4633de4ee73221ac64440d7c7cf
