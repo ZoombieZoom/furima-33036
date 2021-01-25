@@ -3,7 +3,7 @@
 ## users table
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| email | string | null: false |
+| email | string | null: false unique: true　|
 | encrypted_password | string | null: false |
 | name | string | null: false |
 | birthday | date | null: false |
@@ -43,8 +43,8 @@
 | item | references | foreign_key: true |
 
 ### Association
-- belong_to :users
-- belong_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## comments table
 | Column             | Type                | Options                 |
@@ -54,8 +54,8 @@
 | item | references | foreign_key: true |
 
 ### Association
-- belong_to :users
-- belong_to :items
+- belongs_to :user
+- belongs_to :item
 
 ## purchases table
 | Column             | Type                | Options                 |
@@ -64,8 +64,8 @@
 | user | references | foreign_key: true |
 
 ### Association
-- belong_to :users
-- belong_to :items
+- belongs_to :user
+- belongs_to :item
 - has_one :shipping_address
 
 ## shipping_addresses table 
@@ -77,10 +77,11 @@
 | address | string | null: false |
 | building | string | |
 | phone_number | string | null: false |
+| purchases | references | foreign_key: true |
 
 ### Association
-- belong_to :purchases
+- belongs_to :purchase
 
 
 # URL
-https://gyazo.com/45bbc4633de4ee73221ac64440d7c7cf
+<a href="https://gyazo.com/be50a1dbbb1d9fc87e00d9cc8754c70f"><img src="https://i.gyazo.com/be50a1dbbb1d9fc87e00d9cc8754c70f.png" alt="Image from Gyazo" width="948"/></a>
