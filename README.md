@@ -33,8 +33,8 @@
 ### Association
 - has_many :likes
 - has_many :comments
-- belong_to :users
-- has_one :purchases
+- belongs_to :user
+- has_one :purchase
 
 ## likes table　お気に入り登録用
 | Column             | Type                | Options                 |
@@ -66,7 +66,7 @@
 ### Association
 - belong_to :users
 - belong_to :items
-- has_one :shipping_addresses
+- has_one :shipping_address
 
 ## shipping_addresses table 
 | Column             | Type                | Options                 |
@@ -76,7 +76,7 @@
 | municipalities | string | null: false |
 | address | string | null: false |
 | building | string | |
-| phone_number | integer | null: false |
+| phone_number | string | null: false |
 
 ### Association
 - belong_to :purchases
