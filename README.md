@@ -81,5 +81,6 @@
 ### Association
 - belong_to :purchases
 
+
 # URL
 https://gyazo.com/45bbc4633de4ee73221ac64440d7c7cf
