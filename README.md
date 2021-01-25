@@ -29,6 +29,7 @@
 | area_id | integer | null: false |
 | days_id | integer | null: false |
 | price | integer | null: false |
+| user | references | foreign_key: true |
 
 ### Association
 - has_many :likes
@@ -39,7 +40,7 @@
 ## likes table　お気に入り登録用
 | Column             | Type                | Options                 |
 |--------------------|---------------------|-------------------------|
-| user |  references | foreign_key: true |
+| user | references | foreign_key: true |
 | item | references | foreign_key: true |
 
 ### Association
